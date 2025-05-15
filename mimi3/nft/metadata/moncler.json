@@ -1,0 +1,23 @@
+{
+  "name": "Moncler NFT",
+  "symbol": "",
+  "description": "NFT discount 10% on Moncler",
+  "image": "https://gateway.irys.xyz/637JEwkzV3cDXhaurhFRKCNzvAo3EccBMTtmrtGGmqEi",
+  "attributes": [
+    { "trait_type": "Promo", "value": "10%" },
+    { "trait_type": "Type", "value": "With no expiration" },
+    { "trait_type": "Brand", "value": "Moncler" }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "https://gateway.irys.xyz/637JEwkzV3cDXhaurhFRKCNzvAo3EccBMTtmrtGGmqEi",
+        "type": "image/png"
+      }
+    ],
+    "category": "image",
+    "creators": []
+  }
+}
+ 
+  

@@ -1,0 +1,26 @@
+{
+  "name": "Valentino NFT",
+  "symbol": "",
+  "description": "NFT discount 10% on Valentino",
+  "image": " https://gateway.irys.xyz/3JdXr1FrbqXwSnMraZWsEskKbjrL2e6wQqms8LW5N6j3",
+  "attributes": [
+    { "trait_type": "Promo", "value": "10%" },
+    { "trait_type": "Type", "value": "With no expiration" },
+    { "trait_type": "Brand", "value": "Valentino" }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "https://gateway.irys.xyz/3JdXr1FrbqXwSnMraZWsEskKbjrL2e6wQqms8LW5N6j3",
+        "type": "image/png"
+      }
+    ],
+    "category": "image",
+    "creators": []
+  }
+}
+ 
+  
+ 
+  
+ 

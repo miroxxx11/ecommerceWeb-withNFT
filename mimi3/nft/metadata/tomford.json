@@ -1,0 +1,25 @@
+{
+  "name": "Tom Ford NFT",
+  "symbol": "",
+  "description": "NFT discount 10% on Tom Ford",
+  "image": "https://gateway.irys.xyz/DHMMy5jPdcZVP5mdebQounGCt365GsLmfEp1qFzrcEjj",
+  "attributes": [
+    { "trait_type": "Promo", "value": "10%" },
+    { "trait_type": "Type", "value": "With no expiration" },
+    { "trait_type": "Brand", "value": "Tom Ford" }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "https://gateway.irys.xyz/DHMMy5jPdcZVP5mdebQounGCt365GsLmfEp1qFzrcEjj",
+        "type": "image/png"
+      }
+    ],
+    "category": "image",
+    "creators": []
+  }
+}
+ 
+  
+ 
+  
