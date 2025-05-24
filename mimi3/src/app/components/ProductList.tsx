@@ -34,7 +34,7 @@ export default function ProductList({ filters, products }: ProductListProps) {
   return (
     <> {sortedProducts.length > 0 ? (
       sortedProducts.map((product) => (
-        <ProductCard key={product.id} product={product} onClick={() => console.log(product.name)} />
+        <ProductCard key={product.id} product={product} />
       ))
     ) : (
       <p className="text-center text-gray-500 mt-12 italic">No products found</p>

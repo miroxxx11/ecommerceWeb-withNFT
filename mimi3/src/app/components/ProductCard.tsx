@@ -6,7 +6,6 @@ import { useState } from "react"
 
 interface ProductCardProps {
   product: Product
-  onClick: () => void
 }
 
 export default function ProductCard({product}: ProductCardProps) {

@@ -16,8 +16,10 @@
   html {
     @apply scroll-smooth;
   }
-
+  
   body {
+    min-height: 100vh;
+    overflow-x: hidden;
     background-color: var(--background);
     color: var(--foreground);
     transition: background-color 0.3s ease, color 0.3s ease;
@@ -41,7 +43,6 @@
     opacity: 1;
   }
   .light p {
-    opacity: 1;
     color: #ffffff;
   }
   .modal-content p {
@@ -94,7 +95,6 @@
     color: inherit;
   }
 
-  /**/
   input[type="checkbox"] {
     accent-color: #262626;
   }
@@ -103,7 +103,17 @@
     accent-color: #732C37;
   }
 }
+  /* Sekcja do tekstu */
+  .text-backdrop {
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(4px);
+    padding: 0.75rem 1.25rem;
+    border-radius: 1rem;
+  }
 
+  .dark .text-backdrop {
+    background-color: rgba(0, 0, 0, 0.3);
+  }
 /*Animacja*/
 @layer utilities {
   @keyframes fadeIn {
@@ -119,7 +129,7 @@
 
   .animate-fade-in {
     visibility: visible !important;
-    animation: fadeIn 0.6s ease-out forwards;
+    animation: fadeIn 0.5s ease-out forwards;
   }
 
   .theme-transition {

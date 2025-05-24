@@ -25,13 +25,17 @@ export default function Home() {
     )
 
     sectionRefs.current.slice(1).forEach((ref) => {
-      if (ref) observer.observe(ref)
+      if (ref) {
+        ref.classList.remove("animate-fade-in") // wyłaczamy anim jeżeli była
+        observer.observe(ref)
+      }
+      
     })
 
     return () => observer.disconnect()
-  }, [])
+  }, [theme])
 
-  const sectionBaseClasses = "h-screen flex items-center justify-center opacity-0 transition-opacity duration-1000"
+  const sectionBaseClasses = "min-h-screen flex items-center justify-center opacity-0 transition-opacity duration-1000 will-change-[opacity,transform]"
 
   const bgSection1 = theme === "dark" ? "bg-[#0a0a0a]" : "bg-[#edf1ed]"
   const bgSection2 = theme === "dark" ? "bg-[#111]" : "bg-[#fdfdfd]"

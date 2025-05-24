@@ -5,7 +5,6 @@ import type { Product } from "types";
 import { useState } from "react";
 import { useCart } from "../contexts/CartContext";
 import { useTheme } from "../contexts/ThemeContext";
-import products from "../data/products"
 interface ProductModalProps {
   product: Product;
   isOpen: boolean;
@@ -15,22 +14,21 @@ interface ProductModalProps {
 export default function ProductModal({ product, isOpen, onClose }: ProductModalProps) {
   const [currentImageIndex, setCurrentImageIndex] = useState(1);
   const { addToCart } = useCart();
-  const { theme } = useTheme(); // Получаем текущую тему
+  const { theme } = useTheme();
 
   if (!isOpen) return null;
-
-  // Определяем цвет фона в зависимости от темы
+  console.log("ProductModal OPEN:", product.name);
+  // Stylowanie modala zgodnie z motywem
   const modalBgColor = theme === "dark" ? "#CCC2C8" : "#FFF6D5";
   const textColor = theme === "dark" ? "#111827" : "#000000";
 
-  // Массив картинок товара (если только 1, то добавляем заглушки)
   const images = product.images?.length ? product.images : ["/placeholder.svg?height=400&width=400"];
 
   const handleAddToCart = () => {
     addToCart(product);
     onClose();
   };
-
+  //Listanie obrazków
   const nextImage = () => {
     setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
   };
@@ -43,7 +41,7 @@ export default function ProductModal({ product, isOpen, onClose }: ProductModalP
     <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4"
       onClick={(e) => {
         if (e.target === e.currentTarget) {
-          onClose(); // Закрываем только если кликнули на фон
+          onClose(); // Zamykamy przy kliknięciu na tło
         }
       }}
     >
@@ -51,7 +49,7 @@ export default function ProductModal({ product, isOpen, onClose }: ProductModalP
         className="modal-content w-full max-w-7xl min-h-[80vh] rounded-lg shadow-xl relative p-6 flex flex-col"
         style={{ backgroundColor: modalBgColor, color: textColor }}
       >
-        {/* Кнопка закрытия */}
+        {/* Przycisk zamknięcia */}
         <button
           onClick={onClose}
           className="absolute top-4 right-4 text-gray-600 hover:text-gray-900 dark:text-gray-200 dark:hover:text-gray-50 z-10"
@@ -61,7 +59,7 @@ export default function ProductModal({ product, isOpen, onClose }: ProductModalP
         </button>
 
         <div className="grid md:grid-cols-2 gap-6 flex-grow">
-          {/* Блок с картинками */}
+          {/* Blok z obrazkami */}
           <div className="relative h-96 md:h-full rounded-md overflow-hidden">
             <Image src={images[currentImageIndex]} alt={product.name} fill className="object-cover" />
             <button
@@ -80,7 +78,7 @@ export default function ProductModal({ product, isOpen, onClose }: ProductModalP
             </button>
           </div>
 
-          {/* Информация о продукте */}
+          {/* Info */}
           <div className="flex flex-col">
             <h2 className="text-3xl font-bold mb-4">{product.name}</h2>
             <p className="text-2xl font-bold mb-6">${product.price.toFixed(2)}</p>
@@ -91,7 +89,7 @@ export default function ProductModal({ product, isOpen, onClose }: ProductModalP
               <p className="text-lg mb-6">{product.description}</p>
             </div>
 
-            {/* Кнопка добавления в корзину */}
+            {/* Add to cart */}
             <div className="mt-auto">
               <button
                 onClick={handleAddToCart}
